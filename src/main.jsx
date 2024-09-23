@@ -12,9 +12,19 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+// Layouts
+import HomeLayout from "@layouts/HomeLayout.jsx";
+
+// Pages
+import Home from "@pages/home";
+
 // Routes
 const router = createBrowserRouter(
-  createRoutesFromElements([<Route path="/" element={<App />} />])
+  createRoutesFromElements([
+    <Route element={<HomeLayout />}>
+      <Route path="/" element={<Home />} />
+    </Route>,
+  ])
 );
 
 createRoot(document.getElementById("root")).render(

@@ -13,9 +13,34 @@
 
 /* Header */
 .header--link {
-  @apply p-2 font-[400] text-gray-600 hover:border-blue-600 hover:bg-gray-100 rounded-lg;
+  @apply p-2 text-sm font-[400] text-gray-600 hover:border-blue-600 hover:bg-gray-100 rounded-lg active:opacity-70;
 }
-
 .header--link__mobile {
   @apply p-2 font-[500] hover:bg-gray-100 text-gray-800 border-l-2 border-blue-300 pl-4 hover:border-blue-600;
+}
+.header--button {
+  @apply p-2 rounded shadow  text-blue-800 active:opacity-80 active:bg-gray-100 hover:bg-gray-50;
+}
+
+/* Blog Section */
+.category-link {
+  @apply rounded-full bg-slate-100 hover:bg-slate-300  px-8 py-2;
+}
+.category-link__active {
+  @apply bg-blue-600 text-white;
+}
+
+/* More */
+.blog-svg {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='12' viewBox='0 0 40 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 6.172L6.172 0h5.656L0 11.828V6.172zm40 5.656L28.172 0h5.656L40 6.172v5.656zM6.172 12l12-12h3.656l12 12h-5.656L20 3.828 11.828 12H6.172zm12 0L20 10.172 21.828 12h-3.656z' fill='%23ffffff' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  animation: rain 25s linear infinite; /* Increased duration */
+}
+@keyframes rain {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 400%; /* Adjust this to increase the scroll length */
+  }
 }

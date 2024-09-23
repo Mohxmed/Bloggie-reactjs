@@ -19,7 +19,31 @@ export default {
         "2xl": "1536px", // Max-width on 2xl screens
       },
     },
-    extend: {},
+    extend: {
+      textShadow: {
+        default: "0 1px 2px rgba(0, 0, 0, 0.5)",
+        md: "0 2px 4px rgba(0, 0, 0, 0.5)",
+        lg: "0 4px 8px rgba(0, 0, 0, 0.5)",
+        none: "none",
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        ".text-shadow": {
+          textShadow: "0 1px 2px rgba(0, 0, 0, 0.5)",
+        },
+        ".text-shadow-md": {
+          textShadow: "0 2px 4px rgba(0, 0, 0, 0.5)",
+        },
+        ".text-shadow-lg": {
+          textShadow: "0 4px 8px rgba(0, 0, 0, 0.5)",
+        },
+        ".text-shadow-none": {
+          textShadow: "none",
+        },
+      });
+    },
+  ],
 };

@@ -3,8 +3,8 @@ const HeaderMenu = ({ mobile = false }) => {
     <ul
       className={
         mobile
-          ? "z-10 absolute left-0 top-16 flex flex-col w-full shadow p-5 gap-4 "
-          : `flex items-center gap-4`
+          ? "z-10 absolute left-0 top-16 flex flex-col w-full shadow p-5 gap-4 bg-white"
+          : `flex items-center gap-2`
       }
     >
       <a href="#" className={mobile ? "header--link__mobile" : "header--link"}>
