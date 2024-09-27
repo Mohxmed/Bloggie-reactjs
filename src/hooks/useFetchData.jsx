@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { collection, getDocs, QuerySnapshot } from "firebase/firestore";
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../utils/firebase/firebase";
 
 const useFetchData = (collectionName) => {
@@ -10,10 +10,10 @@ const useFetchData = (collectionName) => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
+      setError(null);
       try {
-        // Fetch Data From Firestore
-        const querySnapshot = await getDocs(collection(db, collectionName));
-        const items = querySnapshot.docs.map((doc) => ({
+        const getSnapShot = await getDocs(collection(db, collectionName));
+        const items = getSnapShot.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         }));
@@ -25,11 +25,8 @@ const useFetchData = (collectionName) => {
       }
     };
 
-    //
     fetchData();
-  }, [collectionName]);
-
+  }, []);
   return { data, loading, error };
 };
-
 export default useFetchData;

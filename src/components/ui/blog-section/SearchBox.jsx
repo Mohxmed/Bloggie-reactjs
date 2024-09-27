@@ -1,8 +1,8 @@
 import { RiSearch2Line } from "react-icons/ri";
 
-export default function BlogSectionSearch() {
+export default function SearchBox() {
   return (
-    <div className="w-1/2 absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center">
+    <div className="w-full relative flex items-center">
       <button className="p-2 absolute left-2 text-blue-500">
         <RiSearch2Line size={25} />
       </button>
@@ -14,3 +14,11 @@ export default function BlogSectionSearch() {
     </div>
   );
 }
+
+export const SearchAbsolute = ({ children }) => {
+  return (
+    <div className="w-1/2 absolute -bottom-6 left-1/2 -translate-x-1/2 flex items-center">
+      {children}
+    </div>
+  );
+};

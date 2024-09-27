@@ -1,11 +1,11 @@
 # Bloggie
 
-React web application for writing articles
+ReactJS / Google Firebase web application for writing articles
 
 - Vite
 - ReactJS
+- Firebase
 - TailwindCSS
 - React-router
 - Redux-toolkit
-- Firebase
 - React-icons
