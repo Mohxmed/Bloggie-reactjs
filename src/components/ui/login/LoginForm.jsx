@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 // components
 import Input, { ValidInput } from "@components/Input";
 import { FormButton, GoogleLoginButton } from "@components/Buttons";
 // utils
 import useFormValidate from "@hooks/useFromValidate";
-import handleLogin from "@utils/auth/handleLogin";
 import useGoogleLogin from "@utils/auth/useGoogleLogin";
+import useLogin from "@utils/auth/useLogin";
+
 const LoginForm = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -15,6 +16,7 @@ const LoginForm = () => {
 
   const { errors, check } = useFormValidate(formData);
   const handleGoogleLogin = useGoogleLogin();
+  const handleLogin = useLogin();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });

@@ -4,10 +4,9 @@ import { uploadBytes, getDownloadURL, ref } from "firebase/storage";
 
 const uploadImage = async (file, uid) => {
   if (!file) {
-    toast.error("No file selected for upload.");
+    toast.error("No Profile Picture added.");
     return null; // Return null if no file is provided
   }
-
   // Create a storage reference with a better structure
   const storageRef = ref(storage, `profile_photos/${uid}/profile_picture.jpg`);
 

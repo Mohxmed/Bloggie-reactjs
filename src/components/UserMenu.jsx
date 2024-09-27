@@ -1,4 +1,4 @@
-import { PiQuestion } from "react-icons/pi";
+import { PiCarProfileBold, PiQuestion } from "react-icons/pi";
 import {
   RiDashboard2Line,
   RiEditBoxLine,
@@ -32,9 +32,9 @@ export default function UserMenu({ menuRef, email, name, img }) {
             linkto="/write-post"
           />
           <UserMenuLink
-            label={"Your Dashboard"}
-            Icon={<RiDashboard2Line size={20} />}
-            linkto="/edit-profile"
+            label={"Your Profile"}
+            Icon={<PiCarProfileBold size={20} />}
+            linkto="/profile"
           />
           <UserMenuLink
             label={"Account Settings"}

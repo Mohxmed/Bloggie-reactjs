@@ -16,6 +16,7 @@ import HomeLayout from "@layouts/routes/HomeLayout";
 import Home from "@pages/home";
 import Login from "@pages/Login";
 import Register from "./pages/Register";
+import Profile from "@components/ui/profile/Profile";
 
 // Routes
 const router = createBrowserRouter(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/profile" element={<Profile />} />
     </Route>,
   ])
 );

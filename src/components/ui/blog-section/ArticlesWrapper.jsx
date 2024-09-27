@@ -7,7 +7,7 @@ export default function ArticlesWrapper({ data, loading }) {
   const autoAuthorImage = "https://placehold.co/400x400";
 
   // Loading Statement
-  if (loading) {
+  if (true) {
     return (
       <div className="min-h-72 flex items-center justify-center">
         <LoadingSpinner />

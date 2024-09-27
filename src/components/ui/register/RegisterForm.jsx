@@ -6,7 +6,7 @@ import ImageUpload from "@components/ImageUpload";
 import { FormButton, GoogleLoginButton } from "@components/Buttons";
 // utils
 import useFormValidate from "@hooks/useFromValidate";
-import handleRegister from "@utils/auth/handleRegister";
+import useCreateAccount from "@utils/auth/useCreateAccount";
 
 const RegisterForm = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -35,15 +35,16 @@ const RegisterForm = () => {
   };
 
   /* Submit */
+  const { handleRegister } = useCreateAccount(
+    formData.email,
+    formData.password,
+    formData.displayName,
+    selectedImage
+  );
   const handleSubmit = (e) => {
     e.preventDefault();
     if (Object.keys(errors).length === 0) {
-      handleRegister(
-        formData.email,
-        formData.password,
-        formData.displayName,
-        selectedImage
-      );
+      handleRegister();
     }
   };
 
